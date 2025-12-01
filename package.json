@@ -26,7 +26,7 @@
   "devDependencies": {
     "@rsbuild/core": "^1.6.10",
     "@rslib/core": "^0.18.2",
-    "@types/node": "^22.19.1",
+    "@types/node": "^24.10.1",
     "prettier": "^3.7.3",
     "typescript": "^5.9.3"
   },
