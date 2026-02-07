@@ -44,6 +44,32 @@ Here are the available options:
 | id     | `string`  | Google tag ID                      | `undefined` |
 | enable | `boolean` | Whether to enable Google Analytics | `true`      |
 
+## TypeScript support
+
+If you experience this error on UI side `window.gtag is not a function`, you may need to add types for [gtag](https://developers.google.com/tag-platform/gtagjs) by installing this package:
+
+```bash
+npm install --save-dev @types/gtag.js
+```
+
+and you also have to add it to the types in your `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "types": ["gtag.js"]
+  }
+}
+```
+
+Then you won't experience any TS errors with code like this:
+
+```ts
+if (isProd()) {
+  gtag('event', 'exception', { description: err.message });
+}
+```
+
 ## License
 
 [MIT](./LICENSE).
