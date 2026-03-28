@@ -18,8 +18,8 @@
     "dist"
   ],
   "scripts": {
-   "build": "rslib",
-		"dev": "rslib -w",
+    "build": "rslib",
+    "dev": "rslib -w",
     "prepare": "npm run build",
     "bump": "npx bumpp"
   },
@@ -28,7 +28,7 @@
     "@rslib/core": "^0.20.0",
     "@types/node": "^24.12.0",
     "prettier": "^3.8.1",
-    "typescript": "^5.9.3"
+    "typescript": "6.0.2"
   },
   "peerDependencies": {
     "@rsbuild/core": "^1.0.0 || ^2.0.0-0"
