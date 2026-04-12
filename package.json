@@ -25,9 +25,9 @@
   },
   "devDependencies": {
     "@rsbuild/core": "^1.7.5",
-    "@rslib/core": "^0.20.3",
+    "@rslib/core": "^0.21.0",
     "@types/node": "^24.12.2",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.2",
     "typescript": "6.0.2"
   },
   "peerDependencies": {
