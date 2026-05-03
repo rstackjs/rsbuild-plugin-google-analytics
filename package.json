@@ -24,7 +24,7 @@
     "bump": "npx bumpp"
   },
   "devDependencies": {
-    "@rsbuild/core": "^2.0.2",
+    "@rsbuild/core": "^2.0.3",
     "@rslib/core": "^0.21.3",
     "@types/node": "^24.12.2",
     "prettier": "^3.8.3",
