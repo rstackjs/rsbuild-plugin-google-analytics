@@ -21,11 +21,14 @@
     "build": "rslib",
     "dev": "rslib -w",
     "prepare": "npm run build",
-    "bump": "npx bumpp"
+    "bump": "npx bumpp",
+    "lint": "rslint",
+    "lint:write": "rslint --fix"
   },
   "devDependencies": {
     "@rsbuild/core": "^2.0.3",
     "@rslib/core": "^0.21.3",
+    "@rslint/core": "^0.5.1",
     "@types/node": "^24.12.2",
     "prettier": "^3.8.3",
     "typescript": "6.0.3"
