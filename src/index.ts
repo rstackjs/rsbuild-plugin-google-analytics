@@ -10,11 +10,17 @@ export type PluginGoogleAnalyticsOptions = {
    * @default true
    */
   enable?: boolean;
+  /**
+   * Loading strategy for the external Google tag script.
+   * @default 'async'
+   */
+  scriptLoading?: 'async' | 'defer';
 };
 
 export const pluginGoogleAnalytics = ({
   id,
   enable = true,
+  scriptLoading = 'async',
 }: PluginGoogleAnalyticsOptions): RsbuildPlugin => ({
   name: 'rsbuild-plugin-google-analytics',
 
@@ -36,7 +42,7 @@ export const pluginGoogleAnalytics = ({
             {
               tag: 'script',
               attrs: {
-                async: true,
+                [scriptLoading]: true,
                 src: `https://www.googletagmanager.com/gtag/js?id=${id}`,
               },
             },
