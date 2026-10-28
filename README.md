@@ -39,10 +39,28 @@ export default {
 
 Here are the available options:
 
-| Name   | Type      | Description                        | Defaults    |
-| ------ | --------- | ---------------------------------- | ----------- |
-| id     | `string`  | Google tag ID                      | `undefined` |
-| enable | `boolean` | Whether to enable Google Analytics | `true`      |
+| Name          | Type                 | Description                                         | Defaults    |
+| ------------- | -------------------- | --------------------------------------------------- | ----------- |
+| id            | `string`             | Google tag ID                                       | `undefined` |
+| enable        | `boolean`            | Whether to enable Google Analytics                  | `true`      |
+| scriptLoading | `'async' \| 'defer'` | Loading strategy for the external Google tag script | `'async'`   |
+
+### scriptLoading
+
+The default `async` matches [Google's setup example](https://developers.google.com/tag-platform/gtagjs#add_the_google_tag_to_your_website) and executes the external script as soon as it is available.
+
+Set `scriptLoading` to `defer` to execute the external script after HTML parsing, in document order with other deferred scripts:
+
+```ts
+pluginGoogleAnalytics({
+  id: 'G-xxxxxxxxxx',
+  scriptLoading: 'defer',
+});
+```
+
+This option only affects the external script. The inline `dataLayer` and `gtag` initialization still runs immediately so events can be queued before the external script loads.
+
+A deferred script delays `DOMContentLoaded` and can delay other deferred scripts placed after it. It does not guarantee execution after application hydration.
 
 ## TypeScript support
 
